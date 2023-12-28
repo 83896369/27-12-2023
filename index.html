@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Event Organization</title>
+        
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                background-image: url(168635356_131186.jpg);
+                background-size: cover;
+            }
+
+            header {
+                color: #ed220c;
+                padding: 10px;
+                text-align: center;
+            }
+
+/*
+            nav {
+                display: flex;
+                justify-content: flex-start;
+                background-color: whitesmoke;
+            }
+
+            nav a {
+                color: black;
+                text-decoration: none;
+                padding: 14px 20px;
+                display: inline-block;
+            }
+
+            nav a:hover {
+                background-color: red;
+            }
+*/
+
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+
+            .dropdown .dropbtn {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: black;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: red;
+            }
+            .move-nav{
+                display: flex;
+                justify-content: flex-end;
+               margin-left: 600px;
+
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: red;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+        </style>
+    </head>
+    
+    <body>
+        <div class="navbar-inverse" style="position: sticky;top:0;z-index:100;">
+            <nav class="topnav" id="myTopnav">
+                <a href="#">Home</a>
+                <a href="#">New Year Events</a>
+                <a href="#">Brithday Events</a>
+                <a href="#">Marriage Events</a>
+                <a href="#">About</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Services
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Camera Man</a>
+                        <a href="#">Dinning</a>
+                        <a href="#">Catering</a>
+                        <a href="#">Venues</a>
+                    </div>
+                </div>
+                <div class="move-nav">
+                    <a href="#">Sign up</a>
+                    <a href="#">Login</a>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+            </nav>
+        </div>
+
+         <header>
+            <marquee>
+                 <h1>Event Managements</h1>
+            </marquee>
+        </header>
+
+        <div class="Slideshow-container">
+            <div class="mySlides fade">
+                <img src="https://wallpapercave.com/wp/wp7488275.jpg" style="width: 100%;height: 500px">
+            </div>
+            <div class="mySlides fade">
+                <img src="https://i.pinimg.com/originals/66/0b/b2/660bb2ecc6de42fc36c9140b5a55a10d.jpg" style="width: 100%; height: 500px">
+            </div>
+            <div class="mySlides fade">
+                <img src="https://e1.pxfuel.com/desktop-wallpaper/177/713/desktop-wallpaper-event-management.jpg" style="width: 100%; height: 500px">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div><br>
+
+        <div style="text-align: center">
+            <span class="dot" onclick="currentSlides(1)"></span>
+            <span class="dot" onclick="currentSlides(2)"></span>
+            <span class="dot" onclick="currentSlides(3)"></span>
+        </div><br><br>
+
+        <script>
+            let slideIndex = 1;showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}    
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+            }
+            function myFunction() {
+                  var x = document.getElementById("myTopnav");
+                  if (x.className === "topnav") {
+                    x.className += " responsive";
+                  } else {
+                    x.className = "topnav";
+                  }
+                }
+        </script>
+
+
+        <footer>
+            <div class="footer-links">
+                <div class="contact-us">
+                    <h3>Contact Us</h3>
+                    <p>Email: imransk.0496@gmail.com</p>
+                    <p>Phone: ******9322</p>
+                </div>
+                <div class="follow-us">
+                    <h3>Follow Us</h3>
+                    <a href="https://www.facebook.com/shaik.imran.3760430/" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/mr___cool__0070/" class="fa fa-instagram"></a>
+                    <a href="https://wa.me/message/Z2QAPR24S4HNK1" class="fa fa-whatsapp"></a>
+                    <a href="https://www.youtube.com/channel/UCpjPFsdOX5aRLgdDW8q1Keg#" class="fa fa-youtube"></a>
+                    <a href="https://www.linkedin.com/in/shaik-imran-3866b3b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="fa fa-linkedin"></a>
+                    <a href="https://www.google.co.in/webhp?hl=en&sa=X&ved=0ahUKEwjAgIukhYeDAxXlQ2cHHUi0DY8QPAgJ" class="fa fa-google"></a>
+                </div>
+                <div class="BottomBar">
+                    <p>&copy; @ 2023 Events Management. All rights reserved</p>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>
+
+
+
+
+
+
+
